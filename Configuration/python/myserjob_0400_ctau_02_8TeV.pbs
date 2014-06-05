@@ -1,0 +1,6 @@
+#PBS -l nodes=1:ppn=8
+#PBS -l walltime=02:00:00
+#PBS -q general
+cd /home/sven.dildick/MuonJetTriggerPerformance/CMSSW_6_2_0_SLHC13/src/MuonJetTrigger/Configuration/python
+cmsRun DarkSUSY_mH_125_mGammaD_0400_ctau_02_8TeV_madgraph452_bridge224_LHE_pythia6_cfi_GEN.py
+exit 0
