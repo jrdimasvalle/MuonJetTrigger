@@ -1,7 +1,9 @@
 import FWCore.ParameterSet.Config as cms
+import os
+cmssw = os.getenv("CMSSW_BASE") + "/src/"
 
 source = cms.Source("LHESource",
-    fileNames = cms.untracked.vstring('file:/home/sven.dildick/MuonJetTriggerPerformance/CMSSW_6_2_0_SLHC13/src/MuonJetTrigger/Configuration/data/DarkSUSY_mH_125_mGammaD_0400_ctau_02_8TeV_madgraph452_bridge224_events80k.lhe')
+    fileNames = cms.untracked.vstring('file:%s/MuonJetTrigger/Configuration/data/DarkSUSY_mH_125_mGammaD_0400_ctau_5_8TeV_madgraph452_bridge224_events80k.lhe'%(cmssw))
 )
 
 from Configuration.Generator.PythiaUEZ2starSettings_cfi import *
