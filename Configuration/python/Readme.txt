@@ -34,8 +34,8 @@ cmsDriver.py DarkSUSY_mH_125_mGammaD_0400_ctau_2_8TeV_madgraph452_bridge224_LHE_
 
 ## submit the jobs
 
-qsub -q general myserjob_0400_ctau_05_8TeV.pbs
-qsub -q general myserjob_0400_ctau_02_8TeV.pbs
-qsub -q general myserjob_0400_ctau_2_8TeV.pbs
+qsub -q hepxrt myserjob_0400_ctau_05_8TeV.pbs
+qsub -q hepxrt myserjob_0400_ctau_02_8TeV.pbs
+qsub -q hepxrt myserjob_0400_ctau_2_8TeV.pbs
 
 ## make SIM configs using the LHE files
