@@ -41,6 +41,10 @@ qsub -q hepxrt myserjob_0400_ctau_2_8TeV.pbs
 
 ## make SIM configs using the LHE files
 
+--fileout /eos/uscms/store/user/dildick/MuonJetTrigger/DarkSUSY_mH_125_mGammaD_0400_8TeV_madgraph452_bridge224_LHE_pythia6_SIM.root \
+--fileout /eos/uscms/store/user/dildick/MuonJetTrigger/DarkSUSY_mH_125_mGammaD_0400_ctau_05_8TeV_madgraph452_bridge224_LHE_pythia6_SIM.root \
+--fileout /eos/uscms/store/user/dildick/MuonJetTrigger/DarkSUSY_mH_125_mGammaD_0400_ctau_5_8TeV_madgraph452_bridge224_LHE_pythia6_SIM.root \
+
 cmsDriver.py DarkSUSY_mH_125_mGammaD_0400_8TeV_madgraph452_bridge224_LHE_pythia6_cfi \
 -s SIM \
 --datatier SIM \
@@ -48,8 +52,8 @@ cmsDriver.py DarkSUSY_mH_125_mGammaD_0400_8TeV_madgraph452_bridge224_LHE_pythia6
 --geometry Extended2023TTI \
 --customise SLHCUpgradeSimulations/Configuration/combinedCustoms.cust_2023TTI \
 --eventcontent RECOSIM \
---filein /eos/uscms/store/user/dildick/MuonJetTrigger/DarkSUSY_mH_125_mGammaD_0400_8TeV_madgraph452_bridge224_LHE_pythia6_GEN.root \
---fileout /eos/uscms/store/user/dildick/MuonJetTrigger/DarkSUSY_mH_125_mGammaD_0400_8TeV_madgraph452_bridge224_LHE_pythia6_SIM.root \
+--filein file:/eos/uscms/store/user/dildick/MuonJetTrigger/DarkSUSY_mH_125_mGammaD_0400_8TeV_madgraph452_bridge224_LHE_pythia6_GEN.root \
+--fileout out_sim.root \
 -n 80000 \
 --no_exec
 
@@ -60,8 +64,8 @@ cmsDriver.py DarkSUSY_mH_125_mGammaD_0400_ctau_05_8TeV_madgraph452_bridge224_LHE
 --geometry Extended2023TTI \
 --customise SLHCUpgradeSimulations/Configuration/combinedCustoms.cust_2023TTI \
 --eventcontent RECOSIM \
---filein /eos/uscms/store/user/dildick/MuonJetTrigger/DarkSUSY_mH_125_mGammaD_0400_ctau_05_8TeV_madgraph452_bridge224_LHE_pythia6_GEN.root \
---fileout /eos/uscms/store/user/dildick/MuonJetTrigger/DarkSUSY_mH_125_mGammaD_0400_ctau_05_8TeV_madgraph452_bridge224_LHE_pythia6_SIM.root \
+--filein file:/eos/uscms/store/user/dildick/MuonJetTrigger/DarkSUSY_mH_125_mGammaD_0400_ctau_05_8TeV_madgraph452_bridge224_LHE_pythia6_GEN.root \
+--fileout out_sim.root \
 -n 80000 \
 --no_exec
 
@@ -72,7 +76,7 @@ cmsDriver.py DarkSUSY_mH_125_mGammaD_0400_ctau_5_8TeV_madgraph452_bridge224_LHE_
 --geometry Extended2023TTI \
 --customise SLHCUpgradeSimulations/Configuration/combinedCustoms.cust_2023TTI \
 --eventcontent RECOSIM \
---filein /eos/uscms/store/user/dildick/MuonJetTrigger/DarkSUSY_mH_125_mGammaD_0400_ctau_5_8TeV_madgraph452_bridge224_LHE_pythia6_GEN.root \
---fileout /eos/uscms/store/user/dildick/MuonJetTrigger/DarkSUSY_mH_125_mGammaD_0400_ctau_5_8TeV_madgraph452_bridge224_LHE_pythia6_SIM.root \
+--filein file:/eos/uscms/store/user/dildick/MuonJetTrigger/DarkSUSY_mH_125_mGammaD_0400_ctau_5_8TeV_madgraph452_bridge224_LHE_pythia6_GEN.root \
+--fileout out_sim.root \
 -n 80000 \
 --no_exec
