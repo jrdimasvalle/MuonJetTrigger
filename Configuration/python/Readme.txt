@@ -87,7 +87,7 @@ cmsDriver.py DarkSUSY_mH_125_mGammaD_0400_ctau_5_8TeV_madgraph452_bridge224_LHE_
 ## DIGI-RECO
 
 cmsDriver.py DarkSUSY_mH_125_mGammaD_0400_8TeV_madgraph452_bridge224_LHE_pythia6_cfi \
--s DIGI,L1,RECO \
+-s DIGI:pdigi_valid,L1,L1Reco,RECO \
 --datatier DIGI-RECO \
 --conditions auto:upgradePLS3 \
 --geometry Extended2023TTI \
@@ -95,29 +95,32 @@ cmsDriver.py DarkSUSY_mH_125_mGammaD_0400_8TeV_madgraph452_bridge224_LHE_pythia6
 --eventcontent RECOSIM \
 --filein out_sim.root \
 --fileout out_reco.root \
+--magField 38T_PostLS1 \
 -n 80000 \
 --no_exec
 
 cmsDriver.py DarkSUSY_mH_125_mGammaD_0400_ctau_05_8TeV_madgraph452_bridge224_LHE_pythia6_cfi \
--s SIM \
---datatier SIM \
+-s DIGI:pdigi_valid,L1,L1Reco,RECO \
+--datatier DIGI-RECO \
 --conditions auto:upgradePLS3 \
 --geometry Extended2023TTI \
 --customise SLHCUpgradeSimulations/Configuration/combinedCustoms.cust_2023TTI \
 --eventcontent RECOSIM \
 --filein out_sim.root \
 --fileout out_reco.root \
+--magField 38T_PostLS1 \
 -n 80000 \
 --no_exec
 
 cmsDriver.py DarkSUSY_mH_125_mGammaD_0400_ctau_5_8TeV_madgraph452_bridge224_LHE_pythia6_cfi \
--s SIM \
---datatier SIM \
+-s DIGI:pdigi_valid,L1,L1Reco,RECO \
+--datatier DIGI-RECO \
 --conditions auto:upgradePLS3 \
 --geometry Extended2023TTI \
 --customise SLHCUpgradeSimulations/Configuration/combinedCustoms.cust_2023TTI \
 --eventcontent RECOSIM \
 --filein out_sim.root \
 --fileout out_reco.root \
+--magField 38T_PostLS1 \
 -n 80000 \
 --no_exec
