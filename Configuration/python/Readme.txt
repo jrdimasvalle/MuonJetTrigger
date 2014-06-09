@@ -40,3 +40,39 @@ qsub -q hepxrt myserjob_0400_ctau_02_8TeV.pbs
 qsub -q hepxrt myserjob_0400_ctau_2_8TeV.pbs
 
 ## make SIM configs using the LHE files
+
+cmsDriver.py DarkSUSY_mH_125_mGammaD_0400_8TeV_madgraph452_bridge224_LHE_pythia6_cfi \
+-s SIM \
+--datatier SIM \
+--conditions auto:upgradePLS3 \
+--geometry Extended2023TTI \
+--customise SLHCUpgradeSimulations/Configuration/combinedCustoms.cust_2023TTI \
+--eventcontent RECOSIM \
+--filein /eos/uscms/store/user/dildick/MuonJetTrigger/DarkSUSY_mH_125_mGammaD_0400_8TeV_madgraph452_bridge224_LHE_pythia6_GEN.root \
+--fileout /eos/uscms/store/user/dildick/MuonJetTrigger/DarkSUSY_mH_125_mGammaD_0400_8TeV_madgraph452_bridge224_LHE_pythia6_SIM.root \
+-n 80000 \
+--no_exec
+
+cmsDriver.py DarkSUSY_mH_125_mGammaD_0400_ctau_05_8TeV_madgraph452_bridge224_LHE_pythia6_cfi \
+-s SIM \
+--datatier SIM \
+--conditions auto:upgradePLS3 \
+--geometry Extended2023TTI \
+--customise SLHCUpgradeSimulations/Configuration/combinedCustoms.cust_2023TTI \
+--eventcontent RECOSIM \
+--filein /eos/uscms/store/user/dildick/MuonJetTrigger/DarkSUSY_mH_125_mGammaD_0400_ctau_05_8TeV_madgraph452_bridge224_LHE_pythia6_GEN.root \
+--fileout /eos/uscms/store/user/dildick/MuonJetTrigger/DarkSUSY_mH_125_mGammaD_0400_ctau_05_8TeV_madgraph452_bridge224_LHE_pythia6_SIM.root \
+-n 80000 \
+--no_exec
+
+cmsDriver.py DarkSUSY_mH_125_mGammaD_0400_ctau_5_8TeV_madgraph452_bridge224_LHE_pythia6_cfi \
+-s SIM \
+--datatier SIM \
+--conditions auto:upgradePLS3 \
+--geometry Extended2023TTI \
+--customise SLHCUpgradeSimulations/Configuration/combinedCustoms.cust_2023TTI \
+--eventcontent RECOSIM \
+--filein /eos/uscms/store/user/dildick/MuonJetTrigger/DarkSUSY_mH_125_mGammaD_0400_ctau_5_8TeV_madgraph452_bridge224_LHE_pythia6_GEN.root \
+--fileout /eos/uscms/store/user/dildick/MuonJetTrigger/DarkSUSY_mH_125_mGammaD_0400_ctau_5_8TeV_madgraph452_bridge224_LHE_pythia6_SIM.root \
+-n 80000 \
+--no_exec
