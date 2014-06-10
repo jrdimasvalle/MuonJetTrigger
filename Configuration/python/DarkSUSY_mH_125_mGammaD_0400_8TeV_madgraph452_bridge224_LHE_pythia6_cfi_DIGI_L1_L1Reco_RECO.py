@@ -32,6 +32,10 @@ process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring('out_sim.root')
 )
 
+from MuonJetTrigger.Configuration.inputFiles import eosfiles
+from GEMCode.GEMValidation.InputFileHelpers import useInputDir
+process = useInputDir(process, eosfiles['mGammaD_0400'], True)
+
 process.options = cms.untracked.PSet(
 
 )

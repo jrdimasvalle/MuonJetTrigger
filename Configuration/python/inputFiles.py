@@ -1,0 +1,5 @@
+eosfiles = {}
+
+eosfiles['mGammaD_0400'] = ['/eos/uscms/store/user/lpcgem/dildick/DarkSUSY_mH_125_mGammaD_0400_8TeV_madgraph452_bridge224_LHE_pythia6_v2/DarkSUSY_mH_125_mGammaD_0400_8TeV_madgraph452_bridge224_LHE_pythia6_v2/9a118f230488535d8b711d841e5363b3/']
+eosfiles['mGammaD_0400_ctau_05'] = ['/eos/uscms/store/user/lpcgem/dildick/DarkSUSY_mH_125_mGammaD_0400_ctau_05_8TeV_madgraph452_bridge224_LHE_pythia6_v2/DarkSUSY_mH_125_mGammaD_0400_ctau_05_8TeV_madgraph452_bridge224_LHE_pythia6_v2/9a118f230488535d8b711d841e5363b3/']
+eosfiles['mGammaD_0400_ctau_5'] = ['/eos/uscms/store/user/lpcgem/dildick/DarkSUSY_mH_125_mGammaD_0400_ctau_5_8TeV_madgraph452_bridge224_LHE_pythia6_v2/DarkSUSY_mH_125_mGammaD_0400_ctau_5_8TeV_madgraph452_bridge224_LHE_pythia6_v2/9a118f230488535d8b711d841e5363b3/']
