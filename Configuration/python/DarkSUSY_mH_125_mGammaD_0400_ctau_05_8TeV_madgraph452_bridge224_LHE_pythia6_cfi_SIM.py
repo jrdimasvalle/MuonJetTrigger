@@ -2,7 +2,7 @@
 # using: 
 # Revision: 1.20 
 # Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
-# with command line options: DarkSUSY_mH_125_mGammaD_0400_ctau_05_8TeV_madgraph452_bridge224_LHE_pythia6_cfi -s SIM --datatier SIM --conditions auto:upgradePLS3 --geometry Extended2023TTI --customise SLHCUpgradeSimulations/Configuration/combinedCustoms.cust_2023TTI --eventcontent RECOSIM --filein file:/eos/uscms/store/user/dildick/MuonJetTrigger/DarkSUSY_mH_125_mGammaD_0400_ctau_05_8TeV_madgraph452_bridge224_LHE_pythia6_GEN.root --fileout out_sim.root --magField 38T_PostLS1 -n 80000 --no_exec
+# with command line options: DarkSUSY_mH_125_mGammaD_0400_ctau_05_8TeV_madgraph452_bridge224_LHE_pythia6_cfi -s SIM --datatier SIM --conditions auto:upgradePLS3 --geometry Extended2023TTI --customise SLHCUpgradeSimulations/Configuration/combinedCustoms.cust_2023TTI --eventcontent FEVTDEBUGHLT --filein file:/eos/uscms/store/user/dildick/MuonJetTrigger/DarkSUSY_mH_125_mGammaD_0400_ctau_05_8TeV_madgraph452_bridge224_LHE_pythia6_GEN.root --fileout out_sim.root --magField 38T_PostLS1 -n 80000 --no_exec
 import FWCore.ParameterSet.Config as cms
 
 process = cms.Process('SIM')
@@ -43,10 +43,10 @@ process.configurationMetadata = cms.untracked.PSet(
 
 # Output definition
 
-process.RECOSIMoutput = cms.OutputModule("PoolOutputModule",
+process.FEVTDEBUGHLToutput = cms.OutputModule("PoolOutputModule",
     splitLevel = cms.untracked.int32(0),
     eventAutoFlushCompressedSize = cms.untracked.int32(5242880),
-    outputCommands = process.RECOSIMEventContent.outputCommands,
+    outputCommands = process.FEVTDEBUGHLTEventContent.outputCommands,
     fileName = cms.untracked.string('out_sim.root'),
     dataset = cms.untracked.PSet(
         filterName = cms.untracked.string(''),
@@ -63,10 +63,10 @@ process.GlobalTag = GlobalTag(process.GlobalTag, 'auto:upgradePLS3', '')
 # Path and EndPath definitions
 process.simulation_step = cms.Path(process.psim)
 process.endjob_step = cms.EndPath(process.endOfProcess)
-process.RECOSIMoutput_step = cms.EndPath(process.RECOSIMoutput)
+process.FEVTDEBUGHLToutput_step = cms.EndPath(process.FEVTDEBUGHLToutput)
 
 # Schedule definition
-process.schedule = cms.Schedule(process.simulation_step,process.endjob_step,process.RECOSIMoutput_step)
+process.schedule = cms.Schedule(process.simulation_step,process.endjob_step,process.FEVTDEBUGHLToutput_step)
 
 # customisation of the process.
 

@@ -2,7 +2,7 @@
 # using: 
 # Revision: 1.20 
 # Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
-# with command line options: DarkSUSY_mH_125_mGammaD_0400_ctau_05_8TeV_madgraph452_bridge224_LHE_pythia6_cfi -s DIGI:pdigi_valid,L1,L1Reco,RECO --datatier DIGI-RECO --conditions auto:upgradePLS3 --geometry Extended2023TTI --customise SLHCUpgradeSimulations/Configuration/combinedCustoms.cust_2023TTI --eventcontent RECOSIM --filein out_sim.root --fileout out_reco.root --magField 38T_PostLS1 -n 80000 --no_exec
+# with command line options: DarkSUSY_mH_125_mGammaD_0400_ctau_05_8TeV_madgraph452_bridge224_LHE_pythia6_cfi -s DIGI:pdigi_valid,L1,L1Reco,RECO --datatier DIGI-RECO --conditions auto:upgradePLS3 --geometry Extended2023TTI --customise SLHCUpgradeSimulations/Configuration/combinedCustoms.cust_2023TTI --eventcontent FEVTDEBUGHLT --filein out_sim.root --fileout out_reco.root --magField 38T_PostLS1 -n 80000 --no_exec
 import FWCore.ParameterSet.Config as cms
 
 process = cms.Process('RECO')
@@ -32,10 +32,6 @@ process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring('out_sim.root')
 )
 
-from MuonJetTrigger.Configuration.inputFiles import eosfiles
-from GEMCode.GEMValidation.InputFileHelpers import useInputDir
-process = useInputDir(process, eosfiles['mGammaD_0400_ctau_05'], True)
-
 process.options = cms.untracked.PSet(
 
 )
@@ -49,10 +45,10 @@ process.configurationMetadata = cms.untracked.PSet(
 
 # Output definition
 
-process.RECOSIMoutput = cms.OutputModule("PoolOutputModule",
+process.FEVTDEBUGHLToutput = cms.OutputModule("PoolOutputModule",
     splitLevel = cms.untracked.int32(0),
     eventAutoFlushCompressedSize = cms.untracked.int32(5242880),
-    outputCommands = process.RECOSIMEventContent.outputCommands,
+    outputCommands = process.FEVTDEBUGHLTEventContent.outputCommands,
     fileName = cms.untracked.string('out_reco.root'),
     dataset = cms.untracked.PSet(
         filterName = cms.untracked.string(''),
@@ -73,10 +69,10 @@ process.L1simulation_step = cms.Path(process.SimL1Emulator)
 process.L1Reco_step = cms.Path(process.L1Reco)
 process.reconstruction_step = cms.Path(process.reconstruction_fromRECO)
 process.endjob_step = cms.EndPath(process.endOfProcess)
-process.RECOSIMoutput_step = cms.EndPath(process.RECOSIMoutput)
+process.FEVTDEBUGHLToutput_step = cms.EndPath(process.FEVTDEBUGHLToutput)
 
 # Schedule definition
-process.schedule = cms.Schedule(process.digitisation_step,process.L1simulation_step,process.L1Reco_step,process.reconstruction_step,process.endjob_step,process.RECOSIMoutput_step)
+process.schedule = cms.Schedule(process.digitisation_step,process.L1simulation_step,process.L1Reco_step,process.reconstruction_step,process.endjob_step,process.FEVTDEBUGHLToutput_step)
 
 # customisation of the process.
 

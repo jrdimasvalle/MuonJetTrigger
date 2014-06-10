@@ -39,6 +39,8 @@ qsub -q hepxrt myserjob_0400_ctau_05_8TeV.pbs
 qsub -q hepxrt myserjob_0400_ctau_02_8TeV.pbs
 qsub -q hepxrt myserjob_0400_ctau_2_8TeV.pbs
 
+
+
 ## make SIM configs using the LHE files
 
 --fileout /eos/uscms/store/user/dildick/MuonJetTrigger/DarkSUSY_mH_125_mGammaD_0400_8TeV_madgraph452_bridge224_LHE_pythia6_SIM.root \
@@ -51,7 +53,7 @@ cmsDriver.py DarkSUSY_mH_125_mGammaD_0400_8TeV_madgraph452_bridge224_LHE_pythia6
 --conditions auto:upgradePLS3 \
 --geometry Extended2023TTI \
 --customise SLHCUpgradeSimulations/Configuration/combinedCustoms.cust_2023TTI \
---eventcontent RECOSIM \
+--eventcontent FEVTDEBUGHLT \
 --filein file:/eos/uscms/store/user/dildick/MuonJetTrigger/DarkSUSY_mH_125_mGammaD_0400_8TeV_madgraph452_bridge224_LHE_pythia6_GEN.root \
 --fileout out_sim.root \
 --magField 38T_PostLS1 \
@@ -64,7 +66,7 @@ cmsDriver.py DarkSUSY_mH_125_mGammaD_0400_ctau_05_8TeV_madgraph452_bridge224_LHE
 --conditions auto:upgradePLS3 \
 --geometry Extended2023TTI \
 --customise SLHCUpgradeSimulations/Configuration/combinedCustoms.cust_2023TTI \
---eventcontent RECOSIM \
+--eventcontent FEVTDEBUGHLT \
 --filein file:/eos/uscms/store/user/dildick/MuonJetTrigger/DarkSUSY_mH_125_mGammaD_0400_ctau_05_8TeV_madgraph452_bridge224_LHE_pythia6_GEN.root \
 --fileout out_sim.root \
 --magField 38T_PostLS1 \
@@ -77,12 +79,14 @@ cmsDriver.py DarkSUSY_mH_125_mGammaD_0400_ctau_5_8TeV_madgraph452_bridge224_LHE_
 --conditions auto:upgradePLS3 \
 --geometry Extended2023TTI \
 --customise SLHCUpgradeSimulations/Configuration/combinedCustoms.cust_2023TTI \
---eventcontent RECOSIM \
+--eventcontent FEVTDEBUGHLT \
 --filein file:/eos/uscms/store/user/dildick/MuonJetTrigger/DarkSUSY_mH_125_mGammaD_0400_ctau_5_8TeV_madgraph452_bridge224_LHE_pythia6_GEN.root \
 --fileout out_sim.root \
 --magField 38T_PostLS1 \
 -n 80000 \
 --no_exec
+
+
 
 ## DIGI-RECO
 
@@ -92,7 +96,7 @@ cmsDriver.py DarkSUSY_mH_125_mGammaD_0400_8TeV_madgraph452_bridge224_LHE_pythia6
 --conditions auto:upgradePLS3 \
 --geometry Extended2023TTI \
 --customise SLHCUpgradeSimulations/Configuration/combinedCustoms.cust_2023TTI \
---eventcontent RECOSIM \
+--eventcontent FEVTDEBUGHLT \
 --filein out_sim.root \
 --fileout out_reco.root \
 --magField 38T_PostLS1 \
@@ -105,7 +109,7 @@ cmsDriver.py DarkSUSY_mH_125_mGammaD_0400_ctau_05_8TeV_madgraph452_bridge224_LHE
 --conditions auto:upgradePLS3 \
 --geometry Extended2023TTI \
 --customise SLHCUpgradeSimulations/Configuration/combinedCustoms.cust_2023TTI \
---eventcontent RECOSIM \
+--eventcontent FEVTDEBUGHLT \
 --filein out_sim.root \
 --fileout out_reco.root \
 --magField 38T_PostLS1 \
@@ -118,9 +122,10 @@ cmsDriver.py DarkSUSY_mH_125_mGammaD_0400_ctau_5_8TeV_madgraph452_bridge224_LHE_
 --conditions auto:upgradePLS3 \
 --geometry Extended2023TTI \
 --customise SLHCUpgradeSimulations/Configuration/combinedCustoms.cust_2023TTI \
---eventcontent RECOSIM \
+--eventcontent FEVTDEBUGHLT \
 --filein out_sim.root \
 --fileout out_reco.root \
 --magField 38T_PostLS1 \
 -n 80000 \
 --no_exec
+
