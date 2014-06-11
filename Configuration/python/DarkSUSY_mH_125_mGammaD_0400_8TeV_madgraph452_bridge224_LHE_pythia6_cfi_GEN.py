@@ -27,7 +27,7 @@ process.maxEvents = cms.untracked.PSet(
 
 # Input source
 process.source = cms.Source("LHESource",
-    fileNames = cms.untracked.vstring('file:/home/sven.dildick/MuonJetTriggerPerformance/CMSSW_6_2_0_SLHC13/src//MuonJetTrigger/Configuration/data/DarkSUSY_mH_125_mGammaD_0400_8TeV_madgraph452_bridge224_events80k.lhe')
+    fileNames = cms.untracked.vstring('file:/uscms_data/d3/dildick/work/cscTriggerUpgradeGEMRPC/MuonJetTriggerPerformanceStudy/CMSSW_6_2_0_SLHC13/src/MuonJetTrigger/Configuration/data/DarkSUSY_mH_125_mGammaD_0400_8TeV_madgraph452_bridge224_events80k.lhe')
 )
 
 process.options = cms.untracked.PSet(
