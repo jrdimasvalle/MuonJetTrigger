@@ -2,7 +2,7 @@
 # using: 
 # Revision: 1.20 
 # Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
-# with command line options: DarkSUSY_mH_125_mGammaD_0400_ctau_5_8TeV_madgraph452_bridge224_LHE_pythia6_cfi -s GEN --datatier GEN --conditions auto:upgradePLS3 --eventcontent RECOSIM --evt_type MuonJetTrigger/Configuration/DarkSUSY_mH_125_mGammaD_0400_ctau_5_8TeV_madgraph452_bridge224_LHE_pythia6_cfi --fileout DarkSUSY_mH_125_mGammaD_0400_ctau_5_8TeV_madgraph452_bridge224_LHE_pythia6_GEN.root -n 80000 --no_exec
+# with command line options: DarkSUSY_mH_125_mGammaD_0400_ctau_5_8TeV_madgraph452_bridge224_LHE_pythia6_cfi -s GEN --datatier GEN --conditions auto:upgradePLS3 --eventcontent RECOSIM --evt_type MuonJetTrigger/Configuration/DarkSUSY_mH_125_mGammaD_0400_ctau_5_8TeV_madgraph452_bridge224_LHE_pythia6_cfi --fileout out_gen.root -n 80000 --no_exec
 import FWCore.ParameterSet.Config as cms
 
 process = cms.Process('GEN')
@@ -27,7 +27,7 @@ process.maxEvents = cms.untracked.PSet(
 
 # Input source
 process.source = cms.Source("LHESource",
-    fileNames = cms.untracked.vstring('file:/uscms_data/d3/dildick/work/cscTriggerUpgradeGEMRPC/MuonJetTriggerPerformanceStudy/CMSSW_6_2_0_SLHC13/src//MuonJetTrigger/Configuration/data/DarkSUSY_mH_125_mGammaD_0400_ctau_5_8TeV_madgraph452_bridge224_events80k.lhe')
+    fileNames = cms.untracked.vstring('file:/home/sven.dildick/MuonJetTriggerPerformance/CMSSW_6_2_0_SLHC13/src//MuonJetTrigger/Configuration/data/DarkSUSY_mH_125_mGammaD_0400_ctau_5_8TeV_madgraph452_bridge224_events80k.lhe')
 )
 
 process.options = cms.untracked.PSet(
@@ -47,7 +47,7 @@ process.RECOSIMoutput = cms.OutputModule("PoolOutputModule",
     splitLevel = cms.untracked.int32(0),
     eventAutoFlushCompressedSize = cms.untracked.int32(5242880),
     outputCommands = process.RECOSIMEventContent.outputCommands,
-    fileName = cms.untracked.string('/eos/uscms/store/user/dildick/MuonJetTrigger/DarkSUSY_mH_125_mGammaD_0400_ctau_5_8TeV_madgraph452_bridge224_LHE_pythia6_GEN.root'),
+    fileName = cms.untracked.string('out_gen.root'),
     dataset = cms.untracked.PSet(
         filterName = cms.untracked.string(''),
         dataTier = cms.untracked.string('GEN')
