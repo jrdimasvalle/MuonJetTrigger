@@ -82,11 +82,11 @@ cmsDriver.py DarkSUSY_mH_125_mGammaD_0400_ctau_5_8TeV_madgraph452_bridge224_LHE_
 ## DIGI-RECO
 
 cmsDriver.py DarkSUSY_mH_125_mGammaD_0400_8TeV_madgraph452_bridge224_LHE_pythia6_cfi \
--s DIGI:pdigi_valid,L1,L1Reco,RECO \
---datatier DIGI-RECO \
+-s DIGI:pdigi_valid,L1,L1TrackTrigger,DIGI2RAW,RECO:pixeltrackerlocalreco \
+--datatier DIGI-RAW \
 --conditions auto:upgradePLS3 \
---geometry Extended2023TTI \
---customise SLHCUpgradeSimulations/Configuration/combinedCustoms.cust_2023TTI \
+--geometry Extended2023TTI,Extended2023TTIReco \
+--customise SLHCUpgradeSimulations/Configuration/combinedCustoms.cust_2023TTI,Configuration/DataProcessing/Utils.addMonitoring \
 --eventcontent FEVTDEBUGHLT \
 --filein out_sim.root \
 --fileout out_reco.root \
@@ -95,11 +95,11 @@ cmsDriver.py DarkSUSY_mH_125_mGammaD_0400_8TeV_madgraph452_bridge224_LHE_pythia6
 --no_exec
 
 cmsDriver.py DarkSUSY_mH_125_mGammaD_0400_ctau_05_8TeV_madgraph452_bridge224_LHE_pythia6_cfi \
--s DIGI:pdigi_valid,L1,L1Reco,RECO \
---datatier DIGI-RECO \
+-s DIGI:pdigi_valid,L1,L1TrackTrigger,DIGI2RAW,RECO:pixeltrackerlocalreco \
+--datatier DIGI-RAW \
 --conditions auto:upgradePLS3 \
---geometry Extended2023TTI \
---customise SLHCUpgradeSimulations/Configuration/combinedCustoms.cust_2023TTI \
+--geometry Extended2023TTI,Extended2023TTIReco \
+--customise SLHCUpgradeSimulations/Configuration/combinedCustoms.cust_2023TTI,Configuration/DataProcessing/Utils.addMonitoring \
 --eventcontent FEVTDEBUGHLT \
 --filein out_sim.root \
 --fileout out_reco.root \
@@ -108,11 +108,11 @@ cmsDriver.py DarkSUSY_mH_125_mGammaD_0400_ctau_05_8TeV_madgraph452_bridge224_LHE
 --no_exec
 
 cmsDriver.py DarkSUSY_mH_125_mGammaD_0400_ctau_5_8TeV_madgraph452_bridge224_LHE_pythia6_cfi \
--s DIGI:pdigi_valid,L1,L1Reco,RECO \
---datatier DIGI-RECO \
+-s DIGI:pdigi_valid,L1,L1TrackTrigger,DIGI2RAW,RECO:pixeltrackerlocalreco \
+--datatier DIGI-RAW \
 --conditions auto:upgradePLS3 \
---geometry Extended2023TTI \
---customise SLHCUpgradeSimulations/Configuration/combinedCustoms.cust_2023TTI \
+--geometry Extended2023TTI,Extended2023TTIReco \
+--customise SLHCUpgradeSimulations/Configuration/combinedCustoms.cust_2023TTI,Configuration/DataProcessing/Utils.addMonitoring \
 --eventcontent FEVTDEBUGHLT \
 --filein out_sim.root \
 --fileout out_reco.root \
