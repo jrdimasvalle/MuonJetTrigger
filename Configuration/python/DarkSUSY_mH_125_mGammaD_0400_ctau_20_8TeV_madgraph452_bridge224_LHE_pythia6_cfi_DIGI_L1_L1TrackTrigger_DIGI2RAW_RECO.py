@@ -2,7 +2,7 @@
 # using: 
 # Revision: 1.20 
 # Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
-# with command line options: DarkSUSY_mH_125_mGammaD_0400_8TeV_madgraph452_bridge224_LHE_pythia6_cfi -s DIGI:pdigi_valid,L1,L1TrackTrigger,DIGI2RAW,RECO:pixeltrackerlocalreco --datatier DIGI-RAW --conditions PH2_1K_FB_V3::All --geometry Extended2023TTI,Extended2023TTIReco --customise SLHCUpgradeSimulations/Configuration/combinedCustoms.cust_2023TTI,Configuration/DataProcessing/Utils.addMonitoring --eventcontent FEVTDEBUGHLT --mc --filein out_sim.root --fileout out_reco.root --magField 38T_PostLS1 -n 80000 --no_exec
+# with command line options: DarkSUSY_mH_125_mGammaD_0400_ctau_20_8TeV_madgraph452_bridge224_LHE_pythia6_cfi -s DIGI:pdigi_valid,L1,L1TrackTrigger,DIGI2RAW,RECO:pixeltrackerlocalreco --datatier DIGI-RAW --conditions PH2_1K_FB_V3::All --geometry Extended2023TTI,Extended2023TTIReco --customise SLHCUpgradeSimulations/Configuration/combinedCustoms.cust_2023TTI,Configuration/DataProcessing/Utils.addMonitoring --eventcontent FEVTDEBUGHLT --mc --filein out_sim.root --fileout out_reco.root --magField 38T_PostLS1 -n 80000 --no_exec
 import FWCore.ParameterSet.Config as cms
 
 process = cms.Process('RECO')
@@ -40,7 +40,7 @@ process.options = cms.untracked.PSet(
 # Production Info
 process.configurationMetadata = cms.untracked.PSet(
     version = cms.untracked.string('$Revision: 1.20 $'),
-    annotation = cms.untracked.string('DarkSUSY_mH_125_mGammaD_0400_8TeV_madgraph452_bridge224_LHE_pythia6_cfi nevts:80000'),
+    annotation = cms.untracked.string('DarkSUSY_mH_125_mGammaD_0400_ctau_20_8TeV_madgraph452_bridge224_LHE_pythia6_cfi nevts:80000'),
     name = cms.untracked.string('Applications')
 )
 
